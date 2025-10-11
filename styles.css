@@ -66,8 +66,7 @@ a{
    padding: 20px;
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px);
-    position: sticky;
-    top: 20px;
+    
     z-index: 1000;
     border-radius: 999px;
     margin-top: 20px;
@@ -75,6 +74,11 @@ a{
     backdrop-filter: blur(8.5px);
     -webkit-backdrop-filter: blur(8.5px);
     border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.navigation{
+    position: sticky;
+    top: 20px;
+    z-index: 999;
 }
 .navlink-wrapper{
     display: flex;
@@ -107,6 +111,9 @@ a{
 .btn-primary{
     background: var(--coral);
     color: #fff;
+}
+.btn-secondary{
+    box-shadow: 0 2px 2px 0 rgba(31, 38, 135, 0.37);
 }
 .hero-section{
     padding: 60px 20px;
