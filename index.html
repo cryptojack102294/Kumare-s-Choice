@@ -16,20 +16,22 @@
                     <a href="#" class="brand">
                         <img src="assets/logo.jpg" alt="Kumare's Choice Logo" class="logo">
                     </a>
-                    <div class="navlink-wrapper">
-                        <a href="#" class="navlink">Home</a>
-                        <a href="#" class="navlink">About Us</a>
-                        <a href="#" class="navlink">Products</a>
-                        <a href="#" class="navlink">Why Us</a>
-
-                        <a href="#" class="navlink is-button">Contact</a>
+                    <div class="navlink-wrapper" id="navlinkWrapper">
+                        <a href="#home" class="navlink">Home</a>
+                        <a href="#about" class="navlink">About Us</a>
+                        <a href="#products" class="navlink">Products</a>
+                        <a href="#why-us" class="navlink">Why Us</a>
+                        <a href="#contact" class="navlink is-button">Contact</a>
+                    </div>
+                    <div class="menu-button" id="menuButton">
+                        <img src="assets/apps.png" alt="menu">
                     </div>
 
                 </div>
             </div>
         </nav>
         <main>
-            <section class="hero-section">
+            <section class="hero-section" id="home">
                 <div class="container-lg">
                     <div class="hero-wrapper">
                         <div class="hero-content">
@@ -71,7 +73,7 @@
                     </div>
                 </div>
             </section>
-            <section class="about-section">
+            <section class="about-section" id="about">
                 <div class="container-lg">
                     <div class="about-wrapper">
                         <div class="about-image">
@@ -95,7 +97,7 @@
                         </div>
                     </div>
             </section>
-            <section class="product-section">
+            <section class="product-section" id="products">
                 <div class="container-lg">
                     <h2 class="section-title">Featured Products</h2>
                     <div class="product-wrapper">
@@ -196,7 +198,7 @@
                     </div>
                 </div>
             </section>
-            <section class="why-us-section">
+            <section class="why-us-section" id="why-us">
                 <div class="container-lg">
                     <h2>Why Choose Kumare’s Choice?</h2>
                     <div class="why-us-wrapper">
@@ -285,7 +287,7 @@
                     </div>
                 </div>
             </section>
-            <section class="testimonial-section">
+            <section class="testimonial-section" >
                 <div class="container-lg">
                     <h2>Testimonials</h2>
                     <div class="testimonial-wrapper">
@@ -481,7 +483,7 @@
                     </div>
                 </div>
             </section>
-            <section class="cta-section">
+            <section class="cta-section" id="contact">
                 <div class="container-lg">
                     <div class="cta-wrapper">
                         <h2 class="cta-heading">Your Journey Deserves the Best.</h2>
@@ -545,7 +547,48 @@
         </main>
     </div>
 
+    <script>
 
+        let menuButton = document.getElementById('menuButton');
+        let navlinkWrapper = document.getElementById('navlinkWrapper');
+
+        menuButton.addEventListener('click', () => {
+            navlinkWrapper.classList.toggle('show');
+        });
+
+    </script>
+    <script>
+        let sections = document.querySelectorAll('section');
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.2,
+        };
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.classList.add('visible');
+                }
+            });
+        },options);
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+    </script>
+    <script>
+        let navlinks = document.querySelectorAll('.navlink');
+        console.log(navlinks);
+        navlinks.forEach(link => {
+            
+            link.addEventListener('click' , () => {
+                navlinks.forEach(el => {
+                    el.classList.remove('active');
+                });
+                link.classList.add('active');
+            });
+        });
+    </script>
 </body>
 
 </html>
