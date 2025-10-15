@@ -606,6 +606,7 @@ section{
     .copyright-row{
         display: flex;
         flex-direction: column;
+        text-align: center;
     }
     .hero-image{
         width: 200px;
