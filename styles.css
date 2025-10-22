@@ -44,6 +44,11 @@ h4{
     display: flex;
     align-items: center;
 }
+.brand-text {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--coral);
+}
 .brand img{
     width: 60px;
     height: 60px;
@@ -255,7 +260,7 @@ a{
 .product-details p {
   overflow: hidden;
   display: -webkit-box; 
-  -webkit-line-clamp: 2; 
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical; 
   text-overflow: ellipsis; 
 
@@ -566,9 +571,6 @@ section{
     .cta-wrapper{
         text-align: center;
     }
-    nav{
-
-    }
     .navlink-wrapper{
         background: rgba(255, 255, 255, 1);
         display: flex;
@@ -594,6 +596,9 @@ section{
     }
     .navigation{
         padding: 0 20px;
+    }
+    .brand-text{
+        font-size: 20px ;
     }
     .menu-button{
         display: flex;
